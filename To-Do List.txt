@@ -1,0 +1,98 @@
+= AquaFlame Project -- What has to be Done?! = + error report -.-
+
+1) Make the following: 
+
+-login popup auto close(make a reload on page?!);
+
+-shop with "honor" points and arena points;
+
+-FORUMS CODE OF CONDUCT-Fi*(forum foother);
+
+-FORUMS CODE OF CONDUCT-Fi*(forum foother);
+
+-character search on comunity page not working;
+
+-in character call error - mysql.class.php on line 206;
+
+-main page right bar give error - undefined offset 4 in ***\panel\promo.php;
+
+-item restoration-Fi*(shop foother);
+
+-account security-Fi*(shop foother);
+
+-Knowledge Center-Fi*(aqua header - support);
+
+-Ask a Question-Fi*(aqua header - support);
+
+-Ask a Question-Fi*(aqua header - support);
+
+-Character Transfer-Fi*(main account - footer & header - player options);
+
+-Character Unstuck-Fi*(main account - footer & header - player options);
+
+-Recruit a Friends-Fi*(account footer & header - player options);
+
+-parental control-Fi*(account header - settings);
+
+-my payment options-Fi*(account header - settings);
+
+-vip item switch panel-Fi*(account header -codes & services);
+
+-beta settings-Fi*(account header - codes & services);
+
+-vip code redemption-Fi*(account header - codes & services);
+
+-donations-Fi*(account header - codes & services);
+
+-and pre paid card-Fi*(account header - credits);
+
+-balance history-Fi*(account header - credits);
+
+-refresh balance-Fi*(account header - credits);
+
+-comunication preferences-Fi*(account header - settings);
+
+-Donate / Buy Subscription-Fi*(main account page);
+
+-View Account History-Fi*(main account page);
+
+-AquaFlameCMS 1.0 Remote-Fi*(main account page - footer);
+
+-Donate Subscription-Fi*(main account page - footer);
+
+-beta test reaml (closed)-Fi*(main account page - footer);
+
+-user managment-Fi*(admin page - header);
+
+##################
+Fi -> found in
+##################
+
+
+2) Friendly URL
+
+3) Conquest Criteria + Honor: Needs to be Scripted.(HTML is simple, need PHP Code)
+
+4) Work on Guild teams (Just HTML is ready)
+
+5) Rewrite Armory
+
+6) Autionhouse Scripted.
+
+Information about the Footer.
+1) Do not Change the Powered by AquaflameCMS
+(It's against the Rules of the GNU of our Work)
+2) You can change the: Copyright 2011 - 2014 YOURNAME
+3) You MUST not change the Blizzard Copyrights you can get Sued.
+
+# --------------------------------------------------------------
+# |CMS:                                  |     AquaFlameCMS    |
+# |Based on:                             |http://eu.battle.net |
+# --------------------------------------------------------------
+# |Database version:                             |    8.1.0    |
+# |Website Version:                              |    8.1.0    |
+# |Release Date:                                 | 2010-05-17  |
+# |Latest Update:                                | 2014-07-06  |
+# ----------------------------TEAM------------------------------
+# |Team : FailZorD, Oneluiz, Doxramos, TheAdriann, 	Netcho 	   |
+# --------------------------------------------------------------
