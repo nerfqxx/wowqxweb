@@ -190,7 +190,7 @@ $comun_link['Reddit']   = "http://www.reddit.com/";
 | For example: site is available at http://example.org/AquaFlameCMS_Trinity/
 | That means that you should set this variable as '/AquaFlameCMS_Trinity/'.
 */
-$website['title']       = "AquaFlameCMS 1.0";
+$website['title']       = "WoW Server";
 $website['description'] = "AquaFlameCMS 1.0 the best of the best!";
 $website['keywords']    = "AquaFlameCMS 1.0, The Best CMS";
 $website['address']     = "http://localhost/";

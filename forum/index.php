@@ -17,7 +17,6 @@ include_once("functions.d/GetForumTheme.php");
 <!--[if IE]><link rel="stylesheet" href="<?php echo BASE_URL ?>wow/static/local-common/css/common-ie.css?v15" /><![endif]-->
 <!--[if IE 6]><link rel="stylesheet" href="<?php echo BASE_URL ?>wow/static/local-common/css/common-ie6.css?v15" /><![endif]-->
 <!--[if IE 7]><link rel="stylesheet" href="<?php echo BASE_URL ?>wow/static/local-common/css/common-ie7.css?v15" /><![endif]-->
-
 <!--[if IE 6]><link rel="stylesheet" href="<?php echo BASE_URL ?>wow/static/css/cms-ie6.css?v4" /><![endif]-->
 <!--[if IE]><link rel="stylesheet" href="<?php echo BASE_URL ?>wow/static/css/wow-ie.css?v4" /><![endif]-->
 <!--[if IE 6]><link rel="stylesheet" href="<?php echo BASE_URL ?>wow/static/css/wow-ie6.css?v4" /><![endif]-->
@@ -37,7 +36,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 Core.staticUrl = '<?php echo $website['address'];?>wow/static';
 Core.baseUrl = '<?php echo $website['address'];?>';
 Core.project = 'wow';
-Core.locale = 'en-gb';
+Core.locale = 'es-es';
 Core.buildRegion = 'eu';
 Core.loggedIn = true;
 Flash.videoPlayer = 'http://eu.media.blizzard.com/wow/player/videoplayer.swf';
@@ -50,33 +49,34 @@ Flash.ratingImage = 'http://eu.media.blizzard.com/wow/player/rating-pegi.jpg';
 	<?php include("../header.php"); ?>
 		<div id="content">
 			<div class="content-top">
-			<div class="content-trail">
-				<ol class="ui-breadcrumb">
-					<li itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<a href="../index.php" rel="np" class="breadcrumb-arrow" itemprop="url">
-					<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span>
-					</a>
-					</li>
-					<li class="last" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<a href="../forum" rel="np" rel="np" itemprop="url">
-					<span class="breadcrumb-text" itemprop="name"><?php echo $Forums['Forums']; ?></span>
-					</a>
-					</li>
-				</ol>
-			</div>
-			<div class="content-bot clear">
-				<div id="blizz-tracker-lite">
-					<div class="blizzard-posts">
-						<h2 class="header-2"><?php echo $Forum['Forum77']; ?> <a href="#">(<?php echo $View_all['View_all']; ?>)</a></h2>
-						<a href="javascript:;" class="paging-arrow arrow-left"></a>
-						<a href="javascript:;" class="paging-arrow arrow-right"></a>
-						<div class="mask-wrapper">
-							<div class="mask">
-									<div class="holder" id="tracker-scroll-container">
-										<?php
-										$get_blizzposts = mysql_query("SELECT * FROM forum_blizzposts ORDER BY date DESC");
-										$i=0;
-										while($blizzpost = mysql_fetch_array($get_blizzposts)){
+				<div class="content-trail">
+					<ol class="ui-breadcrumb">
+						<li itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+							<a href="../index.php" rel="np" class="breadcrumb-arrow" itemprop="url">
+								<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span>
+							</a>
+						</li>
+						
+						<li class="last" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+							<a href="../forum" rel="np" rel="np" itemprop="url">
+								<span class="breadcrumb-text" itemprop="name"><?php echo $Forums['Forums']; ?></span>
+							</a>
+						</li>
+					</ol>
+				</div>
+				<div class="content-bot clear">
+					<div id="blizz-tracker-lite">
+						<div class="blizzard-posts">
+							<h2 class="header-2"><?php echo $Forum['Forum77']; ?> <a href="#">(<?php echo $View_all['View_all']; ?>)</a></h2>
+							<a href="javascript:;" class="paging-arrow arrow-left"></a>
+							<a href="javascript:;" class="paging-arrow arrow-right"></a>
+								<div class="mask-wrapper">
+									<div class="mask">
+										<div class="holder" id="tracker-scroll-container">
+											<?php
+											$get_blizzposts = mysql_query("SELECT * FROM forum_blizzposts ORDER BY date DESC");
+											$i=0;
+											while($blizzpost = mysql_fetch_array($get_blizzposts)){
 											if($blizzpost['type'] == "reply"){
 												$post = mysql_fetch_assoc(mysql_query("SELECT * FROM forum_replies WHERE id = '".$blizzpost['postid']."'"));
 												$threadId = $post['threadid'];
