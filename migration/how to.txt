@@ -1,0 +1,126 @@
+Muy buenas ZoneWoW.
+ 
+Ya vimos como se descarga y como funciona el Sistema de Migrador Espejo o Migraciones Automaticas.
+Sin embargo, en este tema vamos a ver como configurar el sistema, viendo sus opciones y como poder determinar que se puede migrar.
+ 
+Lo primero que debemos hacer es configurar nuestro sistema, para ello vamos a “_transfer” y abrimos el archivo “t_config”, este archivo contiene toda la información del servidor. Las líneas contienen comentarios de que hace cada una. No tiene mucha dificultad, si dudais de alguna de ella preguntar en el tema. Vamos a ver primero un poco de información general, aunque me interesa más centrarme en lo que vamos a permitir migrar.
+ 
+Antes de ponernos a editar lineas debemos subir los archivos SQL a nuestras bases de datos. Al importarlo se crean nuevas tablas y esto es muy importante, en la tabla de "realmlist" aparece una nueva columna llamada "TransferAvailable". Esta columna tiene dos posibles valores que van a determinar la capacidad de migrar o no. Si ponemos valor 0 = NO permite migración; 1= SI permite migrar personajes a este reino.
+ 
+0KWJP8v.png
+ 
+Además el sistema contiene un parche para el servidor (OPCIONAL). Este parche permite habilitar el cambio de nombre al entrar por primera vez al servidor con el personaje migrado. Ponerlo ya es cosa vuestra, no es necesario pero os da un extra.
+ 
+Luego en el archivo de configuración vamos a ver muchas lineas de configuración, no tiene dificultar en completar los cambios ya que todo está descrito, pero vamos a ver alguno de ellos debido a los cambios posibles. Antes de empezar para desactivar cualquier cosa se pone ' -1 ' por lo que cuando lo veas significa que no esta activo, y es posible añadir 5 reinos por defecto.
+ 
+Empecemos, el sistema usa SOAP para conectar y enviar los items, por tanto debemos tener esta opción habilitada, si no sabes como visita el siguiente ENLACE. Podemos definir varios reinos y pueden ser de diferente emulador. Aquí la parte importante es el SOAP URI que es propia de cada emulador.
+ 
+En el caso de MythCore = "MC"; TrinityCore= "TC", entre otros. En el siguiente ejemplo tengo dos reinos activos, uno con MC y otro con TC
+ function _SOAPURISwitch($ID) {          // Realm ID = Realm ID From Realmlist table
+        $SOAPURI1  = "MC";                  // Realm 1 SOAP URI
+        $SOAPURI2  = "TC";                    // Realm 2 SOAP URI
+        $SOAPURI3  = -1;                    // Realm 3 SOAP URI
+        $SOAPURI4  = -1;                    // Realm 4 SOAP URI
+        $SOAPURI5  = -1;                    // Realm 5 SOAP URI
+        $SOAPURIUNK = -1;                   // if 6+ Realm exist return Error
+        switch($ID) {
+            case 1:     return $SOAPURI1;
+            case 2:     return $SOAPURI2;
+            case 3:     return $SOAPURI3;
+            case 4:     return $SOAPURI4;
+            case 5:     return $SOAPURI5;
+            default:    return $SOAPURIUNK;
+        }
+Ahora tenemos que añadir el HOST del servidor, o lo que es lo mismo el HOST SOAP.
+function _SOAPHSwitch($ID) {            // Realm ID = Realm ID From Realmlist table
+        $SOAPHost1  = "127.0.0.1";          // Realm 1 SOAP HOST
+        $SOAPHost2  = -1;                   // Realm 2 SOAP HOST
+        $SOAPHost3  = -1;                   // Realm 3 SOAP HOST
+        $SOAPHost4  = -1;                   // Realm 4 SOAP HOST
+        $SOAPHost5  = -1;                   // Realm 5 SOAP HOST
+        $SOAPHostUNK = -1;                  // if 6+ Realm exist return Error
+        switch($ID) {
+            case 1:     return $SOAPHost1;
+            case 2:     return $SOAPHost2;
+            case 3:     return $SOAPHost3;
+            case 4:     return $SOAPHost4;
+            case 5:     return $SOAPHost5;
+            default:    return $SOAPHostUNK;
+        }
+Luego para que SOAP funcione es necesario añadir el puerto a usar.
+   function _SOAPPSwitch($ID) {            // Realm ID = Realm ID From Realmlist table
+        $SOAPPort1  = 7878;                 // Realm 1 SOAP PORT
+        $SOAPPort2  = -1;                   // Realm 2 SOAP PORT
+        $SOAPPort3  = -1;                   // Realm 3 SOAP PORT
+        $SOAPPort4  = -1;                   // Realm 4 SOAP PORT
+        $SOAPPort5  = -1;                   // Realm 5 SOAP PORT
+        $SOAPPortUNK = -1;                  // if 6+ Realm exist return Error
+        switch($ID) {
+            case 1:     return $SOAPPort1;
+            case 2:     return $SOAPPort2;
+            case 3:     return $SOAPPort3;
+            case 4:     return $SOAPPort4;
+            case 5:     return $SOAPPort5;
+            default:    return $SOAPPortUNK;
+        } 
+Además es necesario añadir el HOST de la Base de Datos, esto es útil por si la tenemos en otro servidor.
+    function _HostDBSwitch($ID) {             // Realm ID = Realm ID From Realmlist table
+        $HostDB1      = "127.0.0.1";          // Realm 1 Host DB
+        $HostDB2      = -1;                   // Realm 2 Host DB
+        $HostDB3      = -1;                   // Realm 3 Host DB
+        $HostDB4      = -1;                   // Realm 4 Host DB
+        $HostDB5      = -1;                   // Realm 5 Host DB
+        $HostDBUNK    = -1;                   // if 6+ Realm exist return Error
+        switch($ID) {
+            case 1:     return $HostDB1;
+            case 2:     return $HostDB2;
+            case 3:     return $HostDB3;
+            case 4:     return $HostDB4;
+            case 5:     return $HostDB5;
+            default:    return $HostDBUNK;
+        }
+Ya por último, el nombre de las bases de datos de "characters". Recordar que podemos añadir diferentes reinos, que van a compartir la base de datos auth, pero no characters.
+  function _CharacterDBSwitch($ID) {              // Realm ID = Realm ID From Realmlist table
+        $CharactersDB1      = "wow_335a_characters";// Realm 1 Character DB
+        $CharactersDB2      = -1;                   // Realm 2 Character DB
+        $CharactersDB3      = -1;                   // Realm 3 Character DB
+        $CharactersDB4      = -1;                   // Realm 4 Character DB
+        $CharactersDB5      = -1;                   // Realm 5 Character DB
+        $CharactersDBUNK    = -1;                   // if 6+ Realm exist return Error
+        switch($ID) {
+            case 1:     return $CharactersDB1;
+            case 2:     return $CharactersDB2;
+            case 3:     return $CharactersDB3;
+            case 4:     return $CharactersDB4;
+            case 5:     return $CharactersDB5;
+            default:    return $CharactersDBUNK;
+        } 
+Una vez configurado, vamos a entrar en la segunda parte más importante, ver que se puede migrar y que no, es decir limitar el proceso.
+ 
+Las siguientes lineas permiten limitar el dinero, puntos de honor y arena, así como el nivel.
+$MaxMoney           = 200000000;        // Dinero Máximo, en monedas de cobre
+$MaxHP              = 75000;            // Puntos de Honor Máximos
+$MaxCL              = 80;               // Nivel Máximo
+$MaxAP              = 5000;             // Puntos de Arena Máximos
+Pero si queremos bloquear algunos items, debemos irnos a la linea 114 y buscar lo siguiente:
+function _CheckWrongOrNoItem($REALMID, $ID) {
+De manera sencilla podemos añadir las ID de los items que NO se van a migrar al servidor. Es tan sencillo como copiar la linea anterior con "case ID:"por ejemplo estos items no se permiten:
+switch($ID) {  
+                    case 17:    // UBER CHEST: Martin Fury
+                    case 43651: // UBER FINISH POLE: Crafty's Pole
+                    case 25596: // UBER MOUNT: Peep's Whistle
+                    case 17782: // UBER NECK: Talisman of Binding Shard
+Por otro lado, podemos llevar a cabo cambios de items, para ello nos vamos a la linea 142 y buscamos:
+    function _GetChangedItem($REALMID, $ID) {
+De igual forma que antes, es añadir la ID del item que no queremos y la del item que aceptamos:
+                    case 49623: return 49888;   // Shadowmourne to Shadow's Edge
+Ahora bien, queremos eliminar ciertos logros del servidor, nos vamos al final a la linea 162, donde vemos:
+    function _CheckWrongOrNoAchievement($ID) {
+Aquí podemos realizar la misma operación que la eliminación de items, es añadir la ID en forma de "case ID:"
+ 
+Espero que esta mini-guia os haya servido de utilidad.
+ 
+Cualquier duda...
+ 
+Un saludo
+Desch

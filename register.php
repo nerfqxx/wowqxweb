@@ -163,13 +163,14 @@ if (!isset($_SESSION['username'])) {
             if ($accinfo == 0) {
                 $sha_pass_hash = sha1(strtoupper($accountName) . ":" . strtoupper($accountPass));
                 $register_logon = mysql_query("INSERT INTO account (username,sha_pass_hash,email,last_ip,expansion) VALUES (UPPER('" . $accountName . "'),  CONCAT('" . $sha_pass_hash . "'),'" . $accountEmail . "','" . $ip . "','" . $expansion_wow . "')") or die(mysql_error());
-                $alter_pem_auto_increment = mysql_query("ALTER TABLE `rbac_account_permissions` CHANGE `accountId` `accountId` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Account id'") or die(mysql_error());
-                $register_logon = mysql_query("INSERT INTO rbac_account_permissions (permissionId) VALUES ('199')") or die(mysql_error());
-                $alter_pem_auto_increment = mysql_query("ALTER TABLE `rbac_account_permissions` CHANGE `accountId` `accountId` INT(10) UNSIGNED NOT NULL COMMENT 'Account id'") or die(mysql_error());
+                //$alter_pem_auto_increment = mysql_query("ALTER TABLE `rbac_account_permissions` CHANGE `accountId` `accountId` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Account id'") or die(mysql_error());
+                $accountinfo2 = mysql_fetch_assoc(mysql_query("SELECT * FROM account WHERE username = UPPER('" . $accountName . "')"));
+				$register_logon = mysql_query("INSERT INTO rbac_account_permissions (accountId) VALUES ('" . mysql_real_escape_string($accountinfo2['id']) . "')") or die(mysql_error());
+                //$alter_pem_auto_increment = mysql_query("ALTER TABLE `rbac_account_permissions` CHANGE `accountId` `accountId` INT(10) UNSIGNED NOT NULL COMMENT 'Account id'") or die(mysql_error());
                 mysql_select_db($server_adb, $connection_setup) or die(mysql_error());
                 $accountinfo = mysql_fetch_assoc(mysql_query("SELECT * FROM account WHERE username = UPPER('" . $accountName . "')"));
                 mysql_select_db($server_db, $connection_setup) or die(mysql_error());
-                $register_cms = mysql_query("INSERT INTO users (id,class,firstName,lastName,registerIp,country,birth,quest1,ans1) VALUES ('" . mysql_real_escape_string($accountinfo['id']) . "','0','" . $firstName . "','" . $lastName . "','" . $ip . "','" . $country . "','" . $dob . "','" . $question . "',UPPER('" . $answer . "'))");
+                $register_cms = mysql_query("INSERT INTO users (id,avatar,class,firstName,lastName,registerIp,country,birth,quest1,ans1) VALUES ('" . mysql_real_escape_string($accountinfo['id']) . "','0-0.jpg','0','" . $firstName . "','" . $lastName . "','" . $ip . "','" . $country . "','" . $dob . "','" . $question . "',UPPER('" . $answer . "'))");
                 
                 if ($register_logon == true && $register_cms == true) {
                     echo '<div class="alert-page" align="center">';

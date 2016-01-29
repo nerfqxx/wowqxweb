@@ -76,12 +76,12 @@ $_SESSION['Local'] = $language;
 | 	$serverport	   = "Port";
 */
 $serveraddress = "127.0.0.1";
-$serveruser    = "root";
-$serverpass    = "ascent";
+$serveruser    = "raiz";
+$serverpass    = "6713";
 $serverport    = "3306";
 @define('DBHOST', '127.0.0.1');
-@define('DBUSER', 'root');
-@define('DBPASS', 'ascent');
+@define('DBUSER', 'raiz');
+@define('DBPASS', '6713');
 @define('DB', 'aquaflame');
 
 /*
@@ -136,8 +136,8 @@ $code = "f7c3bc1d808e04732adf679965ccc34ca7ae3441";
 | Paygol service currency
 | For Example $service_currency	= "USD"
 |*/
-$service_id			= "12345";
-$service_name		= "AquaflameCMS";
+$service_id			= "123456";
+$service_name		= "WoW Server";
 $service_currency	= "USD";
 
 /*
@@ -146,8 +146,8 @@ $service_currency	= "USD";
 |--------------------------------------------------------------------------
 |
 */
-$website["realm"]     = "127.0.0.1";
-$name_realm1["realm"] = "mancos realm";
+$website["realm"]     = "wowserver.sytes.net";
+$name_realm1["realm"] = "Mancos Realm";
 $mysql_cod            = 'cp1251';
 
 /*
@@ -191,9 +191,9 @@ $comun_link['Reddit']   = "http://www.reddit.com/";
 | That means that you should set this variable as '/AquaFlameCMS_Trinity/'.
 */
 $website['title']       = "WoW Server";
-$website['description'] = "AquaFlameCMS 1.0 the best of the best!";
-$website['keywords']    = "AquaFlameCMS 1.0, The Best CMS";
-$website['address']     = "http://localhost/";
+$website['description'] = "the best of the best!";
+$website['keywords']    = "The Best Server";
+$website['address']     = "52.32.45.237";
 $website['root']        = "/";
 $website['admin:path']  = "admin123/";
 
@@ -263,5 +263,5 @@ if ($maintenance == true) {
 @define('BASE_URL', '../');
 @define('DBAUTH', 'auth');
 @define('DBCHARS', 'characters');
-@define('DESCRIPTION', 'Servidor Privado de World Of WarCraft');
+@define('DESCRIPTION', 'Servidor Privado de World Of Warcraft');
 @define('KEYWORDS', 'server, wow, trinty');
