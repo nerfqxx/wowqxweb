@@ -187,10 +187,11 @@ function validateF(){
         </div>
         <h3>Forum Information: 
         <?php 
-          if($forum['locked'] == '1'){
-            echo '<font color="red">'.$forum['name'].'</font>';
+			$forumlock = mysql_query("SELECT * FROM forum_forums ORDER BY id ASC");
+          if($forumlock['locked'] == '1'){
+            echo '<font color="red">'.$forumlock['name'].'</font>';
           }else{
-            echo '<font color="green">'.$forum['name'].'</font>';
+            echo '<font color="green">'.$forumlock['name'].'</font>';
           }
         ?></h3>
         <form method="post" action="" class="styleForm" id="newF" onsubmit="return validateF();">
@@ -251,7 +252,7 @@ function validateF(){
           <input type="text" name="f_name" value="Enter Name" class="reg" onfocus="document.getElementById('error_name').innerHTML='';if(this.value=='Enter Name')this.value=''" onblur="if(this.value=='')this.value='Enter Name'"/></p></td>
           <td><div id="error_name"></div></td></tr>
           <tr><td><p><strong>Description: </strong><br />
-          <textarea name="f_desc" class="reg" style="width:450px;" onfocus="document.getElementById('error_desc').innerHTML='';"/><?php echo $forum['description']; ?></textarea></p></td>
+          <textarea name="f_desc" class="reg" style="width:450px;" onfocus="document.getElementById('error_desc').innerHTML='';"/></textarea></p></td>
           <td><div id="error_desc"></div></td></tr>
           <tr><td align="center"><p><button type="submit" name="save">Save Changes</button>
           <a href="forums.php?id=<?php echo $categ['id']; ?>"><button type="reset" name="cancel">Cancel</button></a></p></td>

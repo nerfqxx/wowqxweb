@@ -115,13 +115,7 @@ $page_cat = "forums";
                         $error = 1;
 
                     echo '
-		<ol class="ui-breadcrumb">
-		<li><a href="' . $website['root'] . 'index.php" rel="np">' . $website['title'] . '</a></li>
-		<li><a href="' . $website['root'] . 'forum" rel="np">Forums</a></li>
-		<li><a href="' . $website['root'] . 'forum" rel="np">' . $category['name'] . '</a></li>
-		<li><a href="' . $website['root'] . 'forum/category/?f=' . $forum['id'] . '" rel="np">' . $forum['name'] . '</a></li>
-		<li class="last"><a href="#" rel="np">Delete</a></li>
-		</ol>
+		
 
 
 </div>

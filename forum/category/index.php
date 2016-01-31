@@ -80,9 +80,7 @@ include_once("functions.d/GetForumTheme.php");
 		<a href="' . $website['root'] . 'index.php" rel="np">WoW Server
 		</a>
 		<a rel="np" class="breadcrumb-arrow" itemprop="url">
-			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?>
-			</span>
-		</a>
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
 		
 	</li>
 	<li>
@@ -390,7 +388,7 @@ include_once("functions.d/GetForumTheme.php");
                                             <a href="#">Last Page</a>
                                                         <a href="#">Next &gt;</a>-->
                                     </div>
-                                        <a class="ui-button button1 imgbutton " href="index.php"><span><span><span class="back-arrow"> </span></span></span></a>
+                                        <a class="ui-button button1 imgbutton " href="<?php echo $website['root']; ?>forum/"><span><span><span class="back-arrow"> </span></span></span></a>
                                         <?php
                                         if (isset($_SESSION['username'])) {
                                             if ($forum['locked'] == 1) {
@@ -399,22 +397,22 @@ include_once("functions.d/GetForumTheme.php");
                                                 $posterInfo = mysql_fetch_assoc(mysql_query("SELECT * FROM users WHERE id = '" . $account_information['id'] . "'"));
                                                 switch ($posterInfo['class']) {
                                                     case "blizz":
-                                                        echo'<a class="ui-button button1" href="create-topic/?f=' . $forumid . '"><span><span>Create Thread</span></span></a>';
+                                                        echo'<a class="ui-button button1" href="create-topic/?f=' . $forumid . '"><span><span>' . $Forum['Forum40'] . '</span></span></a>';
                                                         break;
 
                                                     case "mvp":
-                                                        echo'<a class="ui-button button1" href="create-topic/?f=' . $forumid . '"><span><span>Create Thread</span></span></a>';
+                                                        echo'<a class="ui-button button1" href="create-topic/?f=' . $forumid . '"><span><span>' . $Forum['Forum40'] . '</span></span></a>';
                                                         break;
 
                                                     default:
-                                                        echo'<a class="ui-button button1 disabled" href="#"><span><span>Create Thread</span></span></a>';
+                                                        echo'<a class="ui-button button1 disabled" href="#"><span><span>' . $Forum['Forum40'] . '</span></span></a>';
                                                         break;
                                                 }
                                             } else {
-                                                echo'<a class="ui-button button1" href="create-topic/?f=' . $forumid . '"><span><span>Create Thread</span></span></a>';
+                                                echo'<a class="ui-button button1" href="create-topic/?f=' . $forumid . '"><span><span>' . $Forum['Forum40'] . '</span></span></a>';
                                             }
                                         } else {
-                                            echo '<a class="ui-button button1 disabled"><span><span>Create Thread</span></span></a>';
+                                            echo '<a class="ui-button button1 disabled"><span><span>' . $Forum['Forum40'] . '</span></span></a>';
                                         }
                                         ?>
                                         <span class="clear"><!-- --></span>

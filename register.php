@@ -170,7 +170,7 @@ if (!isset($_SESSION['username'])) {
                 mysql_select_db($server_adb, $connection_setup) or die(mysql_error());
                 $accountinfo = mysql_fetch_assoc(mysql_query("SELECT * FROM account WHERE username = UPPER('" . $accountName . "')"));
                 mysql_select_db($server_db, $connection_setup) or die(mysql_error());
-                $register_cms = mysql_query("INSERT INTO users (id,avatar,class,firstName,lastName,registerIp,country,birth,quest1,ans1) VALUES ('" . mysql_real_escape_string($accountinfo['id']) . "','0-0.jpg','0','" . $firstName . "','" . $lastName . "','" . $ip . "','" . $country . "','" . $dob . "','" . $question . "',UPPER('" . $answer . "'))");
+                $register_cms = mysql_query("INSERT INTO users (id,class,firstName,lastName,registerIp,country,birth,quest1,ans1) VALUES ('" . mysql_real_escape_string($accountinfo['id']) . "','0','" . $firstName . "','" . $lastName . "','" . $ip . "','" . $country . "','" . $dob . "','" . $question . "',UPPER('" . $answer . "'))");
                 
                 if ($register_logon == true && $register_cms == true) {
                     echo '<div class="alert-page" align="center">';

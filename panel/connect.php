@@ -4,9 +4,9 @@
 </div>
 <div class="sidebar-content">
 	<ul class="social-media">
-		<li class="atom-feed">
+		<!--<li class="atom-feed">
 		<a href="#" target="_blank"></a>
-		</li>
+		</li>-->
 		<li class="facebook">
 		<a href="<?php echo $comun_link['Facebook']; ?>" title="<?php echo TITLE ?> on Facebook"></a>
 		</li>
@@ -16,9 +16,9 @@
 		<li class="youtube">
 		<a href="<?php echo $comun_link['Youtube']; ?>" title="<?php echo TITLE ?> on Youtube"></a>
 		</li>
-		<li class="reddit">
+		<!--<li class="reddit">
 		<a href="<?php echo $comun_link['Reddit']; ?>" title="<?php echo TITLE ?> on reddit"></a>
-		</li>
+		</li>-->
 	<span class="clear"><!-- --></span>
 	</ul>
 </div>

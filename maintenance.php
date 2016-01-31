@@ -40,16 +40,16 @@ body.zh-cn .info .twitter { background-image: url("/static/maintenance/wow/image
 <div class="notice" id="en-us:notice">
 <h1 class="logo"><span><?php echo TITLE ?></span></h1>
 <div class="info">
-<h2 class="title">We will be back soon!</h2>
-<p class="short"><?php echo TITLE ?> family of websites is currently undergoing maintenance to improve your browsing experience. Thank you for your patience!</p>
-<div class="twitter">For updates, follow <a tabindex="1" target="_blank" href="http://www.twitter.com/test">@<?php echo TITLE ?></a> on Twitter.
+<h2 class="title"><?php echo $mantenimiento001['mante001']; ?></h2>
+<p class="short"><?php echo $mantenimiento002['mante002']; ?></p>
+<div class="twitter"><?php echo $mantenimiento003['mante003']; ?> <a tabindex="1" target="_blank" href="http://www.twitter.com">@<?php echo TITLE ?></a> <?php echo $mantenimiento004['mante004']; ?> Twitter.
 </div>
 </div>
 </div>
 <div class="footer" id="en-us:footer"><center>
-<small><?php echo $copyright3['copyright3']; ?>.<br /><?php echo $copyright['copyright'];  echo $website['title']; ?>.<br /><?php echo $copyright4['copyright4']; ?></small><a href="http://www.strawberry-pr0jcts.com/forum/index.php?/forum/27-wowfailurecms/" height="46" width="190">
-<p><img src="<?php echo BASE_URL ?>wow/static/images/logos/wof-logo-small.png"/></center></a></p>
-<span class="language">English (US)</span><br>
+<small><?php echo $copyright3['copyright3']; ?>.<br /><?php echo $copyright['copyright'];  echo $website['title']; ?>.<br /><?php echo $copyright4['copyright4']; ?></small><a height="46" width="190">
+<p><br><img src="<?php echo BASE_URL ?>wow/static/images/logos/wof-logo-small.png" height="75" width="300" /></center></a></p>
+<span class="language"><?php echo $mantenimiento005['mante005']; ?></span><br>
 </div></div>
 </body>
 </html>

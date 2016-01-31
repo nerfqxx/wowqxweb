@@ -6,6 +6,13 @@ $imagenes[0]='0.jpg';
 $imagenes[1]='1.jpg';
 $imagenes[2]='2.jpg';
 $imagenes[3]='3.jpg';
+$imagenes[4]='4.jpg';
+$imagenes[5]='5.jpg';
+$imagenes[6]='6.jpg';
+$imagenes[7]='7.jpg';
+$imagenes[8]='8.jpg';
+$imagenes[9]='9.jpg';
+$imagenes[10]='10.jpg';
 
 /**
  * Description Images
@@ -14,17 +21,31 @@ $descripcion[0]='Random Image 0';
 $descripcion[1]='Random Image 1';
 $descripcion[2]='Random Image 2';
 $descripcion[3]='Random Image 3';
+$descripcion[4]='Random Image 4';
+$descripcion[5]='Random Image 5';
+$descripcion[6]='Random Image 6';
+$descripcion[7]='Random Image 7';
+$descripcion[8]='Random Image 8';
+$descripcion[9]='Random Image 9';
+$descripcion[10]='Random Image 10';
 
 /**
  * URL of random images
  */
-$href[0]='game/';
-$href[1]='search.php';
-$href[2]='account/';
-$href[3]='account/';
+$href[0]='';
+$href[1]='';
+$href[2]='';
+$href[3]='';
+$href[4]='';
+$href[5]='';
+$href[6]='';
+$href[7]='';
+$href[8]='';
+$href[9]='register.php';
+$href[10]='register.php';
 
 /* Here it is important to give it the number of images starting from 0 */
-$i=rand(0,3);
+$i=rand(0,10);
 #####  4 give error
 ?>
 <div id="sidebar-marketing" class="sidebar-module">

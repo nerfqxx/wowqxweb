@@ -37,7 +37,7 @@ $page_cat = "home";
 <div class="content-trail">
 	<ol class="ui-breadcrumb">
 		<li class="last">
-			<a href="index.html" rel="np" itemprop="url">
+			<a href="index.php" rel="np" itemprop="url">
 				<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span>
 			</a>
 		</li>
@@ -49,7 +49,7 @@ $page_cat = "home";
 						<div id="slideshow" class="ui-slideshow">
 							<div class="slideshow">
 							<?php
-							$slideshows = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 10");
+							$slideshows = mysql_query("SELECT * FROM slideshows ORDER BY id ASC LIMIT 10");
 							mysql_error($connection_setup);
 							$i=0; 
 							echo '<div class="container">';
@@ -64,7 +64,7 @@ $page_cat = "home";
 							
 							
 							<?php
-							$slideshows = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 1");
+							$slideshows = mysql_query("SELECT * FROM slideshows ORDER BY id ASC LIMIT 1");
 							$slideshow = mysql_fetch_assoc($slideshows);
 							echo'<div class="caption">
 							<h3><a href="#" class="link">'.$slideshow['title'].'</a></h3>
@@ -76,32 +76,32 @@ $page_cat = "home";
 							<div class="mask"></div>
 						</div>
 						
-						<?php $slideshows = mysql_query("SELECT * FROM slideshows ORDER BY id DESC LIMIT 10"); ?>
+						<?php $slideshows = mysql_query("SELECT * FROM slideshows ORDER BY id ASC LIMIT 10"); ?>
 						<script type="text/javascript">
-						//<![CDATA[
-							$(function() {
-								
-								Slideshow.initialize('#slideshow', [
-									<?php
-									$i=0; 
-									while($slideshow=mysql_fetch_array($slideshows)){
-									echo '
-									{
-										image: "images/slideshows/'.$slideshow['image'].'",
-										desc: "'.$slideshow['description'].'",
-										title: "'.$slideshow['title'].'",
-										url: "'.$slideshow['link'].'",
-										id: "'.$slideshow['id'].'"
-									}';
-									if($i!=4){echo',';}
-									$i++;
-									}
-									?>
-								]);
+		//<![CDATA[
+        $(function() {
+            Slideshow.initialize('#slideshow', [
+				<?php
+					$i=0; 
+					while($slideshow=mysql_fetch_array($slideshows)){
+					echo '
+					{
+                    image: "images/slideshows/'.$slideshow['image'].'",
+                    desc: "'.$slideshow['description'].'",
+                    title: "'.$slideshow['title'].'",
+                    url: "'.$slideshow['link'].'",
+                    id: "'.$slideshow['id'].'",
+					duration: '.$slideshow['duration'].'
+                    }';
+					if($i!=9){echo',';}
+					$i++;
+					}
+					?>
+            ]);
 
-							});
-						//]]>
-						</script>
+        });
+		//]]>
+		</script>
 						</div>
 	<div class="right-sidebar">
 		<?php
@@ -189,7 +189,7 @@ $page_cat = "home";
 			}
 			
 			$news_first = $new ? $new : 9999999999;
-			$news_query = ("SELECT * FROM news WHERE id <= '".$news_first."' ORDER BY `id` DESC LIMIT 8");
+			$news_query = ("SELECT * FROM news WHERE id <= '".$news_first."' ORDER BY `id` DESC LIMIT 9");
 			$news_query = mysql_query($news_query);
 			$counter = 1;
 			
@@ -223,7 +223,7 @@ $page_cat = "home";
 								<span class="article-title" itemprop="headline">'.$news['title'].'</span>
 							</h2>
 							<span class="clear"><!-- --></span>						
-							<div class="article-summary" itemprop="description">'.$content."...".'</div>
+							<div class="article-summary" itemprop="description">'.$content."...(ver mas)".'</div>
 							<span class="clear"><!-- --></span>
 						</div>
 					</a>

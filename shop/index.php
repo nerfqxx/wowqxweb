@@ -40,7 +40,7 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 					</a>
 					</li>
 					<li class="last" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<a href="shop.php" rel="np" itemprop="url">
+					<a href="/shop" rel="np" itemprop="url">
 					<span class="breadcrumb-text" itemprop="name"><?php echo $Shop['shop']; ?></span>
 					</a>
 					</li>

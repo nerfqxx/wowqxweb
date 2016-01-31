@@ -3,13 +3,19 @@
 		<div id="sitemap" class="promotions">
 			<div class="column">
 				<h3 class="bnet">
-				<a href="#" tabindex="100"><?php echo TITLE ?>
+				<a href="/" tabindex="100"><?php echo TITLE ?>
 				</a>
 				</h3>
 				<ul>
-					<li><a href="<?php echo BASE_URL ?>account_log.php"><?php echo $Account['Account']; ?>
+					<li><a href="/aboutqx.php"><?php echo $about['about']; ?><?php echo TITLE ?>?
 					</a></li>
-					<li><a href=""><?php echo $Support['Support']; ?>
+					<li><a href="<?php echo BASE_URL ?>register.php"><?php echo $Account3['Account3']; ?>
+					</a></li>
+					<li><a href="<?php echo BASE_URL ?>account"><?php echo $AccountAdmin['AccountAdmin']; ?>
+					</a></li>
+					<li><a href="<?php echo BASE_URL ?>support.php"><?php echo $Support3['Support3']; ?>
+					</a></li>
+					<li><a href="/rules.php"><?php echo $re['re37']; ?>
 					</a></li>
 				</ul>
 			</div>
@@ -60,7 +66,7 @@
 					<div class="bnet-offer">
 						<!-- -->
 						<div class="bnet-offer-bg">
-							<a href="<?php echo BASE_URL ?>register.php" target="_blank" id="ad3023837" class="bnet-offer-image" onclick="BnetAds.trackEvent('campaignId:3023837 - imgId:3023042', 'WoWtrialLatAm', 'wow', true);"> <img src="<?php echo BASE_URL ?>wow/static/images/footer/ad_300x100/promo.jpg" width="300" height="100" alt=""/> </a>
+							<a href="register.php" target="_blank" id="ad3023837" class="bnet-offer-image" onclick="BnetAds.trackEvent('campaignId:3023837 - imgId:3023042', 'WoWtrialLatAm', 'wow', true);"> <img src="<?php echo $website['root']; ?>wow/static/images/footer/ad_300x100/<?php echo $imagefoot['imagefoot'] ?>.jpg" width="300" height="100" alt=""/> </a>
 						</div>
 						<script type="text/javascript">
 						//<![CDATA[
@@ -214,7 +220,7 @@
 			</small>
 			</center>
 		</div>
-		<center><a class="powered" href="http://aquaflame.org"></a></center>
+		<center><a class="powered" href="/"></a></center>
 	</div>
 	<span class="clear">
 	<!-- -->

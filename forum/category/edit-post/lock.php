@@ -98,11 +98,23 @@ $page_cat = "forums";
 
                     echo '
 		<ol class="ui-breadcrumb">
-		<li><a href="' . $website['root'] . 'index.php" rel="np">' . $website['title'] . '</a></li>
-		<li><a href="' . $website['root'] . 'forum" rel="np">Forums</a></li>
-		<li><a href="' . $website['root'] . 'forum" rel="np">' . $category['name'] . '</a></li>
-		<li><a href="' . $website['root'] . 'forum/category/?f=' . $forum['id'] . '" rel="np">' . $forum['name'] . '</a></li>
-		<li class="last"><a href="#" rel="np">' . $action . ' Topic</a></li>
+		<li>
+		<a href="' . $website['root'] . 'index.php" rel="np">WoW Server
+		</a>
+		<a rel="np" class="breadcrumb-arrow" itemprop="url">
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
+		
+	</li>
+	<li>
+		<a href="' . $website['root'] . 'forum/" rel="np">'.$Forums['Forums'].'
+		</a>
+		<a rel="np" class="breadcrumb-arrow" itemprop="url">
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
+		
+	</li>
+	
+	
+	<li class="last"><a href="../?t=' . $thread['id'] . '" rel="np">' . $thread['name'] . '</a></li>
 		</ol>
 
 

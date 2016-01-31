@@ -36,12 +36,12 @@ include("../header.php");
 			<div class="content-trail">
 				<ol class="ui-breadcrumb">
 					<li itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<a href="/wow/es/" rel="np" class="breadcrumb-arrow" itemprop="url">
+					<a href="/index.php" rel="np" class="breadcrumb-arrow" itemprop="url">
 					<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span>
 					</a>
 					</li>
 					<li class="last" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<a href="/wow/es/community/" rel="np" itemprop="url">
+					<a href="/community" rel="np" itemprop="url">
 					<span class="breadcrumb-text" itemprop="name"><?php echo $Community['Community'];?></span>
 					</a>
 					</li>

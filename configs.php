@@ -147,7 +147,7 @@ $service_currency	= "USD";
 |
 */
 $website["realm"]     = "wowserver.sytes.net";
-$name_realm1["realm"] = "Mancos Realm";
+$name_realm1["realm"] = "Lich King (3.3.5a)";
 $mysql_cod            = 'cp1251';
 
 /*
@@ -190,8 +190,8 @@ $comun_link['Reddit']   = "http://www.reddit.com/";
 | For example: site is available at http://example.org/AquaFlameCMS_Trinity/
 | That means that you should set this variable as '/AquaFlameCMS_Trinity/'.
 */
-$website['title']       = "WoW Server";
-$website['description'] = "the best of the best!";
+$website['title']       = "WoW Qx";
+$website['description'] = "World of Warcraft Private Server";
 $website['keywords']    = "The Best Server";
 $website['address']     = "52.32.45.237";
 $website['root']        = "/";
@@ -259,7 +259,7 @@ if ($maintenance == true) {
 }
 /* End of file configs.php */
 
-@define('TITLE', 'WoW Server');
+@define('TITLE', 'WoW Qx Server');
 @define('BASE_URL', '../');
 @define('DBAUTH', 'auth');
 @define('DBCHARS', 'characters');

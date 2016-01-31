@@ -94,10 +94,34 @@ if (isset($_POST['s_move'])) {
                             }
 
                             echo '
-	<li><a href="' . $website['root'] . 'index.php" rel="np">' . $website['title'] . '</a></li>
-	<li><a href="' . $website['root'] . 'forum" rel="np">Forums</a></li>
-	<li><a href="' . $website['root'] . 'forum" rel="np">' . $category['name'] . '</a></li>
-	<li><a href="' . $website['root'] . 'forum/category/?f=' . $forum['id'] . '" rel="np">' . $forum['name'] . '</a></li>
+	<li>
+		<a href="' . $website['root'] . 'index.php" rel="np">WoW Server
+		</a>
+		<a rel="np" class="breadcrumb-arrow" itemprop="url">
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
+		
+	</li>
+	<li>
+		<a href="' . $website['root'] . 'forum/" rel="np">'.$Forums['Forums'].'
+		</a>
+		<a rel="np" class="breadcrumb-arrow" itemprop="url">
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
+		
+	</li>
+	<li>
+		<a href="' . $website['root'] . 'forum/" rel="np">' . $category['name'] . '
+		</a>
+		<a rel="np" class="breadcrumb-arrow" itemprop="url">
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
+		
+	</li>
+	<li>
+		<a href="' . $website['root'] . 'forum/" rel="np">' . $forum['name'] . '
+		</a>
+		<a rel="np" class="breadcrumb-arrow" itemprop="url">
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
+		
+	</li>
 	<li class="last"><a href="../?t=' . $thread['id'] . '" rel="np">' . $thread['name'] . '</a></li>
 	';
                         }
@@ -406,7 +430,7 @@ if (isset($_POST['s_move'])) {
 
                                         echo '
 									<a class="ui-button button2 " href="#new-post">
-										<span><span>' . $lang_general['reply'] . '</span></span>
+										<span><span>' . $Forum['Forum61'] . '</span></span>
 									</a>
 
 									<a class="ui-button button2 " href="#new-post" onclick="Cms.Topic.quote(' . $thread['id'] . ');">
@@ -554,9 +578,9 @@ if (isset($_POST['s_move'])) {
                                                     }
                                                     echo'
 											<a class="ui-button button2 " href="#new-post">
-										    <span><span>' . $lang_general['reply'] . '</span></span>
+										    <span><span>' . $Forum['Forum61'] . '</span></span>
 									    </a>
-                      <a class="ui-button button2 " href="../edit-post/delete.php?p=' . $postid['id'] . '"><span><span>Delete</span></span></a>
+                      <a class="ui-button button2 " href="../edit-post/delete.php?p=' . $postid['id'] . '"><span><span>'.$deletepost['deletepost'].'</span></span></a>
 											<a class="ui-button button2 " href="#new-post" onclick="Cms.Topic.quote(' . $reply['id'] . ');">
 												<span><span><span class="icon-quote">' . $Forum['Forum72'] . '</span></span></span>
 											</a>
@@ -573,7 +597,7 @@ if (isset($_POST['s_move'])) {
                                                 }
                                                 echo '
 									  <a class="ui-button button2 " href="#new-post">
-										  <span><span>' . $lang_general['reply'] . '</span></span>
+										  <span><span>' . $Forum['Forum61'] . '</span></span>
 									  </a>';
                                                 if ($userInfo['class'] != "" && $reply['author'] != $userInfo['id']) {
                                                     echo '<a class="ui-button button2 " href="../edit-post/delete.php?p=' . $postid['id'] . '"><span><span>Delete</span></span></a>';

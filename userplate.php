@@ -4,7 +4,7 @@
 if (!isset($_SESSION['username'])) {
     ?>
     <div class="user-plate">
-        <a href="?login" class="card-character plate-logged-out" onclick="return Login.open()">
+        <a href="<?php echo $website['root'] ?>account/" class="card-character plate-logged-out" >
             <span class="card-portrait"></span>
             <span class="wow-login-key"></span>
             <span class="login-msg"><?php echo $uplate['login']; ?></span>
@@ -36,9 +36,9 @@ if (!isset($_SESSION['username'])) {
         if ($select) {
             $avatar = $select['race'] . "-" . $select['gender'] . ".jpg";
             $update = mysql_query("UPDATE users SET `avatar` = '" . $avatar . "', `character` ='" . $character_id . "', `char_realm` = '" . $realm_extra['id'] . "' WHERE id = '" . $account_extra['id'] . "'");
-            echo '<meta http-equiv="refresh" content="0;url='.BASE_URL.'"/>';
+            echo '<meta http-equiv="refresh" content="0;url='.$website['root'].'"/>';
         } else {
-            echo '<meta http-equiv="refresh" content="0;url='.BASE_URL.'"/>';
+            echo '<meta http-equiv="refresh" content="0;url='.$website['root'].'"/>';
         }
     }
 
@@ -81,7 +81,7 @@ if (!isset($_SESSION['username'])) {
                     //Re-Check
                     $account_extra = mysql_fetch_assoc(mysql_query("SELECT * FROM $server_db.users WHERE id = '" . $account_information['id'] . "'"));
 
-                    if ($account_extra['character'] == 0) {
+                    if ($account_extra['character'] == 1) {
                         $actualchar = mysql_fetch_assoc($check_chars);
                         $avatar = $actualchar['race'] . "-" . $actualchar['gender'] . ".jpg";
 
@@ -162,7 +162,7 @@ if (!isset($_SESSION['username'])) {
         ?>
         <div class="user-plate">
             <a id="user-plate" class="card-character plate-<?php echo $side; ?> ajax-update" rel="np" href="#"> <!--http://eu.battle.net/static-render/eu/twisting-nether/68/83271236-avatar.jpg?alt=/wow/static/images/2d/avatar/6-0.jpg-->
-                <span class="card-portrait" style="background-image:url(<?php echo BASE_URL ?>wow/static/images/2d/avatar/<?php echo $actualchar["race"] . "-" . $actualchar["gender"]; ?>.jpg)"></span>
+                <span class="card-portrait" style="background-image:url(<?php echo $website['root'] ?>wow/static/images/2d/avatar/<?php echo $actualchar["race"] . "-" . $actualchar["gender"]; ?>.jpg)"></span>
             </a>
             <div class="meta-wrapper meta-<?php echo $side; ?> ajax-update">
                 <div class="meta">
@@ -208,7 +208,7 @@ if (!isset($_SESSION['username'])) {
                                 </div>
                                 <div class="context-links">
                                     
-									<a href="<?php echo BASE_URL ?>" title="<?php echo $uplate['profile']; ?>" rel="np" class="icon-profile link-first">
+									<a href="<?php echo $website['root'] ?>" title="<?php echo $uplate['profile']; ?>" rel="np" class="icon-profile link-first">
                                         <?php echo $uplate['profile']; ?>
                                     </a>
                                     <a href="#" title="<?php echo $uplate['post']; ?>" rel="np" class="icon-posts">

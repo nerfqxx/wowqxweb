@@ -1,4 +1,15 @@
 <?php
+$mantenimiento001['mante001']			  = "We will be back soon!";
+$mantenimiento002['mante002']			  = "The websites is currently undergoing maintenance to improve your browsing experience. Thank you for your patience!";
+$mantenimiento003['mante003']			  = "For updates, follow";
+$mantenimiento004['mante004']			  = "on";
+$mantenimiento005['mante005']			  = "English (US)";
+$LoadMore['LoadMore']					  = "Load more";
+$by['by']								  = "by ";
+$about['about']							  = "What is ";
+$imagefoot['imagefoot']					  = "en-us";
+$deletepost['deletepost']				  = "Delete";
+
 $adb['adb']                               = "Could not connect to Account Database.";
 $db['db']                                 = "Could not connect to Website Database.";
 $home['home']                             = "home";
@@ -22,6 +33,7 @@ $click['click']                           = " Click ";
 $code_forum['code_forum']                 = " to view the Forums Code of Conduct.";
 $here['here']                             = "here";
 $Account['Account']                       = "Account";
+$AccountAdmin['AccountAdmin']             = "Account manager";
 $Account1['Account1']                     = "Can't log in?";
 $Account3['Account3']                     = "Create Account";
 $Account4['Account4']                     = "Account Summary";

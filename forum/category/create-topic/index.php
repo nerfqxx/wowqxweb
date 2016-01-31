@@ -123,11 +123,34 @@ $page_cat = "forums";
 
                         echo '
 		<ol class="ui-breadcrumb">
-		<li><a href="' . $website['root'] . 'index.php" rel="np">' . $website['title'] . '</a></li>
-		<li><a href="' . $website['root'] . 'forum" rel="np">Forums</a></li>
-		<li><a href="' . $website['root'] . 'forum" rel="np">' . $category['name'] . '</a></li>
-		<li><a href="' . $website['root'] . 'forum/category/?f=' . $forum['id'] . '" rel="np">' . $forum['name'] . '</a></li>
-		<li class="last"><a href="create-topic/?f=' . $forumid . '" rel="np">' . $Forum['Forum8'] . '</a></li>
+		<li>
+		<a href="' . $website['root'] . 'index.php" rel="np">WoW Server
+		</a>
+		<a rel="np" class="breadcrumb-arrow" itemprop="url">
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
+		
+	</li>
+	<li>
+		<a href="' . $website['root'] . 'forum/" rel="np">'.$Forums['Forums'].'
+		</a>
+		<a rel="np" class="breadcrumb-arrow" itemprop="url">
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
+		
+	</li>
+	<li>
+		<a href="' . $website['root'] . 'forum/" rel="np">' . $category['name'] . '
+		</a>
+		<a rel="np" class="breadcrumb-arrow" itemprop="url">
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
+		
+	</li>
+	<li>
+		<a href="' . $website['root'] . 'forum/" rel="np">' . $forum['name'] . '
+		</a>
+		<a rel="np" class="breadcrumb-arrow" itemprop="url">
+			<span class="breadcrumb-text" itemprop="name"><?php echo TITLE ?></span></a>
+		
+	</li>
 		</ol>';
 
                         $error = 0;
@@ -261,10 +284,10 @@ $page_cat = "forums";
 
                                                 <div class="post-edit">
                                                     <div id="post-errors"></div>
-                                                    <div class="talkback-controls">
+                                                    <!--<div class="talkback-controls">
                                                         <a href="javascript:;" onclick="Cms.Topic.previewToggle(this, 'preview')" class="preview-btn"><span class="arr"></span><span class="r"></span><span class="c">Preview</span></a>
                                                         <a href="javascript:;" onclick="Cms.Topic.previewToggle(this, 'edit')" class="edit-btn selected"><span class="arr"></span><span class="r"></span><span class="c">Edit</span></a>
-                                                    </div>
+                                                    </div>-->
                                                     <div class="editor1" id="post-edit"><div class="bml-toolbar"></div>
                                                         <a id="editorMax" rel="5000"></a>
                                                         <input type="text" id="subject" name="subject" value="" class="post-subject" maxlength="55" />

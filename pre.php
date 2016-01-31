@@ -7,7 +7,7 @@ $page_cat="pre";
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-de" class="ff ff25">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<title><?php echo TITLE ?> - Test TItle</title>
+<title><?php echo TITLE ?> - Promociones del Mes</title>
 <link rel="shortcut icon" href="pre/img/favicon.ico" type="image/x-icon" />
 <script type="text/javascript" src="pre/js/jquery-1.js"></script>
 <script type="text/javascript" src="pre/js/core.js"></script>
