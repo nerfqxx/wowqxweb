@@ -1,3 +1,4 @@
+<br><br><br><br>
 <div class="sidebar-module " id="sidebar-events" style="">
 <div class="sidebar-title">
 <h3 class="category title-events"><a href="account/vote.php"><?php echo $Vote['VotePanel']; ?></a></h3></div>

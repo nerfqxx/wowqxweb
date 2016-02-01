@@ -106,27 +106,31 @@ $page_cat = "home";
 	<div class="right-sidebar">
 		<?php
 		include("panel/promo.php");
-		include("panel/connect.php");
+		
 		?>
 		<div class="sidebar" id="sidebar">
 		<div class="sidebar-top">
 		<div class="sidebar-bot">
 		<?php
-		if(isset($_SESSION['username']))
-		{
-		include("panel/vote.php");
-		}
-			$query="SELECT * FROM sidebars WHERE name='ServerInfo'";
+		$query="SELECT * FROM sidebars WHERE name='ServerInfo'";
 					$con=mysqli_connect(DBHOST, DBUSER, DBPASS, DB);
 						$result=mysqli_query($con,$query);
 			while($row=mysqli_fetch_array($result)) {
 						if($row['enabled']=='1') {
 							include("panel/server_information.php");
+							
 								}
 						else {
 						}
 					}
-		include("panel/sotd.php");
+					
+		if(isset($_SESSION['username']))
+		{
+		include("panel/vote.php");
+		}
+			
+		//include("panel/sotd.php");
+		include("panel/connect.php");
 		include("panel/popular_topics.php");
 		?>
 					<div id="dynamic-sidebar-target"></div>

@@ -112,8 +112,8 @@ while($realm = mysql_fetch_array($get_realms)){
     $server_wdb = $realm_config['world_db'];
 ?>
 <div class="realm-panel">
-    	<div id="sidebar-marketing" class="sidebar-module">
-        	<div style="font-size:18px; color:#FEF092">
+    	
+        	<div style="font-size:15px; color:#FEF092">
         	  <h3 class="title-bnet-ads">
                 <table width="300">
             	    <tr>
@@ -129,22 +129,23 @@ while($realm = mysql_fetch_array($get_realms)){
                 </table>
         	  </h3>
         	</div>
-    	   <span class="clear"><!-- --></span>
+			
+    	   <!--<span class="clear"> </span>-->
     	
         	<?php
-        	$sql = mysql_query ("SELECT * FROM $server_adb.`uptime` WHERE `realmid` = '".$realm['id']."' ORDER BY `starttime` DESC LIMIT 1");  
-        	$uptime_results = mysql_fetch_array($sql);    
+        	//$sql = mysql_query ("SELECT * FROM $server_adb.`uptime` WHERE `realmid` = '".$realm['id']."' ORDER BY `starttime` DESC LIMIT 1");  
+        	//$uptime_results = mysql_fetch_array($sql);    
         	
-        	if($uptime_results['uptime'] > 2592000) $uptime =  round(($uptime_results['uptime'] / 30 / 24 / 60 / 60),2)."".$Status['Months']."";
-        	elseif($uptime_results['uptime'] > 86400) $uptime =  round(($uptime_results['uptime'] / 24 / 60 / 60),2)."".$Status['Days']."";
-        	elseif($uptime_results['uptime'] > 3600) $uptime =  round(($uptime_results['uptime'] / 60 / 60),2)."".$Status['Hours']."";
-        	else $uptime =  round(($uptime_results['uptime'] / 60),2)."".$Status['Min']."";
+        	//if($uptime_results['uptime'] > 2592000) $uptime =  round(($uptime_results['uptime'] / 30 / 24 / 60 / 60),2)."".$Status['Months']."";
+        	//elseif($uptime_results['uptime'] > 86400) $uptime =  round(($uptime_results['uptime'] / 24 / 60 / 60),2)."".$Status['Days']."";
+        	//elseif($uptime_results['uptime'] > 3600) $uptime =  round(($uptime_results['uptime'] / 60 / 60),2)."".$Status['Hours']."";
+        	//else $uptime =  round(($uptime_results['uptime'] / 60),2)."".$Status['Min']."";
         		
-        		if (!$world) echo "<font color=red><b>".$Status['Uptime:']."</b></font> <span class='date text-area-2'>0 ".$Status['Min']."</span> <br>";
-        		else echo "<font color='#00FF00'><b>".$Status['Uptime:']."</b></font> <span class='date text-area-2'>$uptime</span> <br>";	
+        		//if (!$world) echo "<font color=red><b>".$Status['Uptime:']."</b></font> <span class='date text-area-2'>0 ".$Status['Min']."</span> <br>";
+        		//else echo "<font color='#00FF00'><b>".$Status['Uptime:']."</b></font> <span class='date text-area-2'>$uptime</span> <br>";	
         	?>
     	
-    	<div class="sidebar-module text-area-2" id="sidebar">
+    	<!--<div class="sidebar-module text-area-2" id="sidebar">
         	<table width="300">
         	  <tr><td width="208" height="18">
         	<?php echo $Ind['Ind6']; ?><span class="date text-area-2"><?php echo $realm_config['version']; ?></span></td>
@@ -154,13 +155,13 @@ while($realm = mysql_fetch_array($get_realms)){
             <tr><td height="18">
             <?php echo $Status['PjCreat']; ?>
     		<?php
-    		$char_sql = "SELECT COUNT(*) FROM $server_cdb.characters";
-    		$sqlquery = mysql_query($char_sql) or die(mysql_error());
-    		$char = mysql_result($sqlquery,0,0);
+    		//$char_sql = "SELECT COUNT(*) FROM $server_cdb.characters";
+    		//$sqlquery = mysql_query($char_sql) or die(mysql_error());
+    		//$char = mysql_result($sqlquery,0,0);
      
-            $char_online = "SELECT COUNT(*) FROM $server_cdb.characters WHERE online = '1'";
-    		$sql_on = mysql_query($char_online) or die(mysql_error());
-    		$char_on = mysql_result($sql_on,0,0);
+            //$char_online = "SELECT COUNT(*) FROM $server_cdb.characters WHERE online = '1'";
+    		//$sql_on = mysql_query($char_online) or die(mysql_error());
+    		//$char_on = mysql_result($sql_on,0,0);
     		?>
     		<span class="date text-area-2"><?php echo $char; ?></span>
            	</td><td align="left">
@@ -171,46 +172,46 @@ while($realm = mysql_fetch_array($get_realms)){
             <td align="left">
             <?php echo $Status['Exp']; ?><span class="date text-area-2"><?php echo $realm_config['exp_rate']; ?></span><br />
             </td>
-            </tr></table>
-    		<span class="clear"><!-- --></span>
-    		<br />
+            </tr></table>-->
+    		<!--<span class="clear"> </span>-->
+    		
     				
-    		<center>
+    		<!--<center>
     			<?php 
-    			$bar_width = "273px";
-    			$bar_height = "20px";
-    			$ally_img = "wow/static/images/services/status/ally.png";
-    			$horde_img = "wow/static/images/services/status/horde.png";
+    			//$bar_width = "273px";
+    			//$bar_height = "20px";
+    			//$ally_img = "wow/static/images/services/status/ally.png";
+    			//$horde_img = "wow/static/images/services/status/horde.png";
     			//Show percent online (true = yes, false = no)
-    			$show_percent = true; 
+    			//$show_percent = true; 
     
-    			$alliance = array("1","3","4","7","11","22");
-    			$horde = array("2","5","6","8","9","10");
+    			//$alliance = array("1","3","4","7","11","22");
+    			//$horde = array("2","5","6","8","9","10");
     
-    			$p = @getPlayers($server_cdb);
-    			$a = @doFaction($server_cdb,$alliance);
-    			$h = @doFaction($server_cdb,$horde);
-    			$ap = @percent($a,$p);
-    			$hp = @percent($h,$p);
-    			$b = @barWidth($a,$p,273);
-    			$c = @barWidth($h,$p,273);
-    			echo "<a data-tooltip='".doFaction($server_cdb,$alliance)." <font style=\"color:#3399ff;font-weight:bold;\">".$Status['Ali']."</font> <small>".$Status['PlOnLine']."</small>'\><div style=\"width:" . $bar_width . ";height:" . $bar_height . ";\">
-    			<div style=\"float:left;text-align:right;background:url(./" . $ally_img . ");width:" . $b . "px;height:20px;\">";
-    			if($show_percent) {
-    				echo "<font style=\"color:#FFFFFF;font-weight:bold;\"><center>$ap%</center></font></a>";
-    			}
-    			echo "<a data-tooltip='".doFaction($server_cdb,$horde)." <font style=\"color:#ff3333;font-weight:bold;\">".$Status['Horde']."</font> <small>".$Status['PlOnLine']."</small>'\></div>
-    			<div style=\"float:right;text-align:left;background:url(./" . $horde_img . ");background-position:right;width:" . $c . "px;height:20px;\">";
-    			if($show_percent) {
-    				echo "<font style=\"color:#FFFFFF;font-weight:bold;\"><center>$hp%</center></font></a>";
-    			}
-    			echo "</div>
-    			</div>";
+    			//$p = @getPlayers($server_cdb);
+    			//$a = @doFaction($server_cdb,$alliance);
+    			//$h = @doFaction($server_cdb,$horde);
+    			//$ap = @percent($a,$p);
+    			//$hp = @percent($h,$p);
+    			//$b = @barWidth($a,$p,273);
+    			//$c = @barWidth($h,$p,273);
+    			//echo "<a data-tooltip='".doFaction($server_cdb,$alliance)." <font style=\"color:#3399ff;font-weight:bold;\">".$Status['Ali']."</font> <small>".$Status['PlOnLine']."</small>'\><div style=\"width:" . $bar_width . ";height:" . $bar_height . ";\">
+    			//<div style=\"float:left;text-align:right;background:url(./" . $ally_img . ");width:" . $b . "px;height:20px;\">";
+    			//if($show_percent) {
+    			//	echo "<font style=\"color:#FFFFFF;font-weight:bold;\"><center>$ap%</center></font></a>";
+    			//}
+    			//echo "<a data-tooltip='".doFaction($server_cdb,$horde)." <font style=\"color:#ff3333;font-weight:bold;\">".$Status['Horde']."</font> <small>".$Status['PlOnLine']."</small>'\></div>
+    			//<div style=\"float:right;text-align:left;background:url(./" . $horde_img . ");background-position:right;width:" . $c . "px;height:20px;\">";
+    			//if($show_percent) {
+    			//	echo "<font style=\"color:#FFFFFF;font-weight:bold;\"><center>$hp%</center></font></a>";
+    			//}
+    			//echo "</div>
+    			//</div>";
     
     			?>
     		</center>
-    		</div>
-    	</div>
+    		</div>-->
+    	
     </div>
 	<br />
 <?php
