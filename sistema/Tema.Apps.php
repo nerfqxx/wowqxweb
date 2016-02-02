@@ -1,0 +1,1 @@
+<?php define('TEMA', 'wow'); ?>
