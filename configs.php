@@ -95,9 +95,9 @@ $serverport    = "3306";
 | @access public
 |
 */
-$server_adb = "auth";
-$server_wdb = "world";
-$server_cdb = "characters";
+$server_adb = "auth_lk";
+$server_wdb = "world_lk";
+$server_cdb = "characters_lk";
 $server_db  = "aquaflame";
 
 /*
@@ -137,7 +137,7 @@ $code = "f7c3bc1d808e04732adf679965ccc34ca7ae3441";
 | For Example $service_currency	= "USD"
 |*/
 $service_id			= "123456";
-$service_name		= "WoW Server";
+$service_name		= "WoW Qx";
 $service_currency	= "USD";
 
 /*
@@ -261,7 +261,7 @@ if ($maintenance == true) {
 
 @define('TITLE', 'WoW Qx Server');
 @define('BASE_URL', '../');
-@define('DBAUTH', 'auth');
-@define('DBCHARS', 'characters');
+@define('DBAUTH', 'auth_lk');
+@define('DBCHARS', 'characters_lk');
 @define('DESCRIPTION', 'Servidor Privado de World Of Warcraft');
 @define('KEYWORDS', 'server, wow, trinty');
